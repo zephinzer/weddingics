@@ -8,16 +8,20 @@
 
             var ua = navigator.userAgent.toLowerCase();
             var isAndroid = ua.indexOf("android") > -1;
-            var isEdge = window.navigator.userAgent.indexOf("Edg") > -1;
-            var isFirefox = ua.includes('firefox') || ua.includes('fxios/');
-            var isSafari = navigator.vendor && navigator.vendor.indexOf('Apple') > -1 &&
-                   navigator.userAgent &&
-                   navigator.userAgent.indexOf('CriOS') == -1 &&
-                   navigator.userAgent.indexOf('FxiOS') == -1;
+            var isEdge = ua.indexOf("edg") > -1;
+            var isFirefox = ua.includes('firefox') || 
+                ua.includes('fxios/');
+            var isSafari = navigator.vendor && 
+                navigator.vendor.indexOf('Apple') > -1 &&
+                navigator.userAgent &&
+                ua.indexOf('crios') == -1 &&
+                ua.indexOf('fxios') == -1;
             alert(ua);
             if (isAndroid || isEdge) {
                 window.location = gcalLink;
-            } else if (isSafari || isFirefox) {
+            } else if (isFirefox) {
+                window.open(icsLink);
+            } else if (isSafari) {
                 window.location = icsLink;
             } else {
                 window.location = gcalLink
