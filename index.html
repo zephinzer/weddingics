@@ -9,19 +9,17 @@
             var ua = navigator.userAgent.toLowerCase();
             var isAndroid = ua.indexOf("android") > -1;
             var isEdge = window.navigator.userAgent.indexOf("Edg") > -1;
-            var isFirefox = navigator.userAgent.toLowerCase().includes('firefox');
+            var isFirefox = ua.includes('firefox');
             var isSafari = navigator.vendor && navigator.vendor.indexOf('Apple') > -1 &&
                    navigator.userAgent &&
                    navigator.userAgent.indexOf('CriOS') == -1 &&
                    navigator.userAgent.indexOf('FxiOS') == -1;
+            alert(ua);
             if (isAndroid || isEdge) {
-                alert("1");
                 window.location = gcalLink;
             } else if (isSafari || isFirefox) {
-                alert("2");
                 window.location = icsLink;
             } else {
-                alert("3");
                 window.location = gcalLink
             }
         })()
