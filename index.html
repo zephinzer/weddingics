@@ -17,10 +17,8 @@
                 ua.indexOf('crios') == -1 &&
                 ua.indexOf('fxios') == -1;
             // alert(ua);
-            if (isAndroid || isEdge) {
+            if (isAndroid || isEdge || isFirefox) {
                 window.location = gcalLink;
-            } else if (isFirefox) {
-                window.open(icsLink);
             } else if (isSafari) {
                 window.location = icsLink;
             } else {
