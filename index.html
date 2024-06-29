@@ -9,7 +9,7 @@
             var ua = navigator.userAgent.toLowerCase();
             var isAndroid = ua.indexOf("android") > -1;
             var isEdge = window.navigator.userAgent.indexOf("Edg") > -1;
-            var isFirefox = ua.includes('firefox');
+            var isFirefox = ua.includes('firefox') || ua.includes('fxios/');
             var isSafari = navigator.vendor && navigator.vendor.indexOf('Apple') > -1 &&
                    navigator.userAgent &&
                    navigator.userAgent.indexOf('CriOS') == -1 &&
